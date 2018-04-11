@@ -1,12 +1,10 @@
 let intialState = [];
-      
-  
- export default function getPosts(state = intialState, action) {
-    if (action.type === "FETCH_POSTS_SUCCESS") {
-      return [
-        ...state,
-       action.payload
-      ]
-    }
+
+export default function posts(state = intialState, action) {
+  switch (action.type) {
+    case "ADD_POSTS":
+      return [...action.payload];
+    default:
       return state;
   }
+}

@@ -1,9 +1,10 @@
+import {request } from '../lib/request'
+
 export const getPosts = () => {
     return dispatch => {
-        fetch(`https://jsonplaceholder.typicode.com/posts`)
-          .then(response => response.json())
+      request(`https://jsonplaceholder.typicode.com/posts`)
           .then(json => {
-            dispatch({ type: 'FETCH_POSTS_SUCCESS', payload: json });
+            dispatch({ type: 'ADD_POSTS', payload: json });
           });
     }
 }

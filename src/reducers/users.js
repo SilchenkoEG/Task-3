@@ -2,11 +2,9 @@ let intialState = [];
       
   
  export default function users(state = intialState, action) {
-    if (action.type === "FETCH_USERS_SUCCESS") {
-      return [
-        ...state,
-       action.payload
-      ]
+    if (action.type === "ADD_USERS") {
+      return action.payload
+      
     }
       return state;
   }

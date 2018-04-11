@@ -1,13 +1,10 @@
+import {request } from '../lib/request'
 
-export const getData = () => {
+export const getUsers = () => {
     return dispatch => {
-        fetch("https://jsonplaceholder.typicode.com/users")
-      .then(response => response.json())
+      request("https://jsonplaceholder.typicode.com/users")
       .then(json => {
-        dispatch({ type: 'FETCH_USERS_SUCCESS', payload: json });
+        dispatch({ type: 'ADD_USERS', payload: json });
       });
     }
 }
-// export const getData = (data) => {
-//   return { type: 'FETCH_TRACKS_SUCCESS', payload: data };
-// }

@@ -1,2 +1,2 @@
-export const  request = (url) =>  fetch(url).then(response => response.json())
-
+import axios from "axios";
+export const request = url => axios.get(url);
